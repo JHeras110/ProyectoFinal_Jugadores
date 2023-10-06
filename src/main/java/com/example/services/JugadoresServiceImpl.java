@@ -45,10 +45,8 @@ public class JugadoresServiceImpl implements JugadoresService {
         for (EquipoDTO equipo : equipos) {
             if(equipo.getNombre().equalsIgnoreCase(nombreEquipo)){
                 codigoEquipo = equipo.getIdequipo();
-            }else{
-                throw new NombreNoEncontradoException("No se ha encontrado ningun equi con el nombre "+nombreEquipo);
             }
-        }        
+        }  
         return dao.getJugadoresPorEquipo(codigoEquipo);
     }
 
